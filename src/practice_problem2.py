@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and zhengshan fang.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -26,6 +26,8 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 ########################################################################
 
 import simple_testing as st
+import time
+import sys
 
 
 def main():
@@ -42,7 +44,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4 reasonable   ** tests.
     #
@@ -55,6 +57,50 @@ def run_test_practice_problem2a():
     print('--------------------------------------------------')
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
+
+    # Test 1:  Contents fit in the Box easily.
+    expected_sequence = [3, 4, 5, 6]
+    actual_sequence = practice_problem2a([1, 2, 3, 4], 2)
+    print("Expected:", expected_sequence)
+    print("Actual:  ", actual_sequence)
+    if expected_sequence == actual_sequence:
+        print("Test passed SUCCESSFULLY!")
+    else:
+        print_failure_message()
+    print()
+
+    # Test 2:  Contents fit in the Box easily.
+    expected_sequence = [49, 33, 44]
+    actual_sequence = practice_problem2a([39, 23, 34], 10)
+    print("Expected:", expected_sequence)
+    print("Actual:  ", actual_sequence)
+    if expected_sequence == actual_sequence:
+        print("Test passed SUCCESSFULLY!")
+    else:
+        print_failure_message()
+    print()
+
+    # Test 3:  Contents fit in the Box easily.
+    expected_sequence = [2345, 23495, 3992]
+    actual_sequence = practice_problem2a([2345, 23495, 3992], 0)
+    print("Expected:", expected_sequence)
+    print("Actual:  ", actual_sequence)
+    if expected_sequence == actual_sequence:
+        print("Test passed SUCCESSFULLY!")
+    else:
+        print_failure_message()
+    print()
+
+    # Test 4:  Contents fit in the Box easily.
+    expected_sequence = [1000, 1001, 1002]
+    actual_sequence = practice_problem2a([1, 2, 3], 999)
+    print("Expected:", expected_sequence)
+    print("Actual:  ", actual_sequence)
+    if expected_sequence == actual_sequence:
+        print("Test passed SUCCESSFULLY!")
+    else:
+        print_failure_message()
+    print()
 
 
 def practice_problem2a(sequence, delta):
@@ -76,13 +122,25 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # done: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
+    for k in range(len(sequence)):
+        sequence[k] += delta
+    return sequence
+
+
+def print_failure_message(message='  *** FAILED the above test. ***',
+                          flush_time=1.0):
+    """ Prints a message onto stderr, hence in RED. """
+    time.sleep(flush_time)
+    print(message,
+          file=sys.stderr, flush=True)
+    time.sleep(flush_time)
 
 
 def run_test_practice_problem2b():
@@ -177,7 +235,11 @@ def practice_problem2b(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
-
+    s = ''
+    for k in range(len(sequence)):
+        string = sequence[k]
+        s += string[0]
+    return s
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
