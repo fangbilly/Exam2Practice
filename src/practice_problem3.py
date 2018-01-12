@@ -456,10 +456,10 @@ def practice_problem3d(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ####################################################################
-    for k in range(len(sequence)):
-        if sequence[k] == 0:
-            return k
-    return -1
+    # for k in range(len(sequence)):
+    #     if sequence[k] == 0:
+    #         return k
+    # return -1
     ####################################################################
     # done: 6. Just ABOVE this TO DO, you should have implemented
     #     a solution for the   practice_problem3d   function.
@@ -476,7 +476,7 @@ def practice_problem3d(sequence):
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ####################################################################
     zero_list = practice_problem3c(sequence)
-    if len(zero_list) >= 0:
+    if len(zero_list) >= 1:
         return zero_list[0]
     return -1
 
